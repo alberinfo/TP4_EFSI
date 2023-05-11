@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import CardCita from './Cita.js'
 import FormMascotas from './form';
+import { useState } from 'react';
 
-var Cardcitas =
+/*var Cardcitas =
   [
     {
       nombre: "Nina",
@@ -28,9 +29,10 @@ var Cardcitas =
     }
   ];
 
-export {Cardcitas};
+export {Cardcitas};*/
 
 function App() {
+  const [citas, setCitas] = useState([]);
   //NO ENTIENDO COMO SE SUPONE QUE SE RE-RENDEREE LA LA LISTA DE CARTAS CUANDO CARDCITAS RECIBE UN NUEVO ELEMENTO. USEEFFECT, USEHOOK, LO QUE SEA NO TIENEN SENTIDO. REACT, PORFA DESAPARECE.0
 
   return (
@@ -41,11 +43,11 @@ function App() {
         <div className= "row">
           <div className= "one-half column">
             <h2>Crear mi Cita</h2>
-            <FormMascotas/>
+            <FormMascotas setCitas={setCitas} citas={citas}/>
           </div>
           <div className= "one-half column">
             <h2>Administra tus citas</h2>
-            {Cardcitas.map((element) => (
+            {citas.map((element) => (
               <CardCita nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas}></CardCita>
             ))}
           </div>

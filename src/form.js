@@ -1,17 +1,24 @@
 import { Cardcitas } from "./App";
+import React, { useState } from "react";
 
-function FormMascotas() {
-    function agregarMascota(e) {
+function FormMascotas({setCitas, citas}) {
+    
+    const agregarMascota = (e) => {
         e.preventDefault();
 
-        Cardcitas.push({
-            nombre: e.target.mascota.value,
-            duenno: e.target.propietario.value,
-            fecha: e.target.fecha.value,
-            hora: e.target.hora.value,
-            sintomas: e.target.sintomas.value
-        });
+        setCitas([
+            ...citas,
+            {
+                nombre: e.target.mascota.value,
+                duenno: e.target.propietario.value,
+                fecha: e.target.fecha.value,
+                hora: e.target.hora.value,
+                sintomas: e.target.sintomas.value
+            }
+        ])
+        //Cardcitas.push();
     }
+   
 
     return (
         <form onSubmit={agregarMascota}>

@@ -48,7 +48,7 @@ function App() {
           <div className= "one-half column">
             <h2>Administra tus citas</h2>
             {citas.map((element) => (
-              <CardCita nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas}></CardCita>
+              <CardCita id={element.id} nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas}></CardCita>
             ))}
           </div>
         </div>

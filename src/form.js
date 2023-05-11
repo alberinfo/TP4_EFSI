@@ -1,14 +1,16 @@
 import { Cardcitas } from "./App";
 import React, { useState } from "react";
+  
 
 function FormMascotas({setCitas, citas}) {
-    
+    const [contador, setContador] = useState(0);
     const agregarMascota = (e) => {
         e.preventDefault();
-
+        setContador(contador + 1);
         setCitas([
             ...citas,
             {
+                id: contador,
                 nombre: e.target.mascota.value,
                 duenno: e.target.propietario.value,
                 fecha: e.target.fecha.value,

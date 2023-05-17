@@ -1,4 +1,3 @@
-import { Cardcitas } from "./App";
 import React, { useState } from "react";
   
 

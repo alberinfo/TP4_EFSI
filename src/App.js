@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import CardCita from './Cita.js'
+import CardCita from './Cita'
 import FormMascotas from './form';
 import { useState } from 'react';
 
@@ -48,7 +48,7 @@ function App() {
           <div className= "one-half column">
             <h2>Administra tus citas</h2>
             {citas.map((element) => (
-              <CardCita id={element.id} nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas}></CardCita>
+              <CardCita id={element.id} nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas} setCitas={setCitas}></CardCita>
             ))}
           </div>
         </div>

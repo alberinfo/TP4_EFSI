@@ -1,11 +1,8 @@
-import citas from './App.js'
-import setCitas from './App.js'
-function CardCita(prop)
+function CardCita(prop, citas, setCitas)
 {
-    
-    function eliminarCitas(gId){ 
-        
-        setCitas(citas.filter(citas.id !== gId))
+    const eliminarCitas = (gid) => {
+        console.log(citas);
+        //setCitas([...citas.filter(cita => cita.id !== gid)]);
     }
 
     return (

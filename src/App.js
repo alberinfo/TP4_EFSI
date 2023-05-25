@@ -35,6 +35,10 @@ function App() {
   const [citas, setCitas] = useState([]);
   //NO ENTIENDO COMO SE SUPONE QUE SE RE-RENDEREE LA LA LISTA DE CARTAS CUANDO CARDCITAS RECIBE UN NUEVO ELEMENTO. USEEFFECT, USEHOOK, LO QUE SEA NO TIENEN SENTIDO. REACT, PORFA DESAPARECE.0
 
+  function getCitas() {
+    return citas;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -43,12 +47,12 @@ function App() {
         <div className= "row">
           <div className= "one-half column">
             <h2>Crear mi Cita</h2>
-            <FormMascotas setCitas={setCitas} citas={citas}/>
+            <FormMascotas getCitas={getCitas} setCitas={setCitas}/>
           </div>
           <div className= "one-half column">
             <h2>Administra tus citas</h2>
             {citas.map((element) => (
-              <CardCita id={element.id} nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas} setCitas={setCitas}></CardCita>
+              <CardCita id={element.id} nombre={element.nombre} duenno={element.duenno} fecha={element.fecha} hora={element.hora} sintomas={element.sintomas} getCitas={getCitas} setCitas={setCitas}></CardCita>
             ))}
           </div>
         </div>

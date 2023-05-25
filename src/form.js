@@ -1,11 +1,12 @@
 import React, { useState } from "react";
   
 
-function FormMascotas({setCitas, citas}) {
+function FormMascotas({ getCitas, setCitas}) {
     const [contador, setContador] = useState(0);
     const agregarMascota = (e) => {
         e.preventDefault();
         setContador(contador + 1);
+        let citas = getCitas();
         setCitas([
             ...citas,
             {
